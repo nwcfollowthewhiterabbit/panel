@@ -133,7 +133,12 @@ Route::group([
         Route::get('/', [Client\Servers\StartupController::class, 'index']);
         Route::put('/variable', [Client\Servers\StartupController::class, 'update']);
     });
-
+    Route::group(['prefix' => '/firewall'], function () {
+	Route::get('/', [Client\Servers\FirewallController::class, 'index']);
+	Route::post('/add', [Client\Servers\FirewallController::class, 'add']);
+	Route::delete('/remove/{id}', [Client\Servers\FirewallController::class, 'remove']);
+    });
+    
     Route::group(['prefix' => '/settings'], function () {
         Route::post('/rename', [Client\Servers\SettingsController::class, 'rename']);
         Route::post('/reinstall', [Client\Servers\SettingsController::class, 'reinstall']);
