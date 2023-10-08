@@ -165,5 +165,11 @@ export default {
             name: 'Activity',
             component: ServerActivityLogContainer,
         },
+        {
+	path: '/firewall',
+	permission: 'firewall.*',
+	name: 'Firewall',
+	component: FirewallContainer,
+},
     ],
 } as Routes;
