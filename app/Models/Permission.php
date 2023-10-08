@@ -99,6 +99,12 @@ class Permission extends Model
      * @see \Pterodactyl\Models\Permission::permissions()
      */
     protected static array $permissions = [
+        'firewall' => [
+	        'description' => 'Manage server firewall.',
+	        'keys' => [
+		    'manage' => 'View, create and remove rules.',
+	    ],
+            ],
         'websocket' => [
             'description' => 'Allows the user to connect to the server websocket, giving them access to view console output and realtime server stats.',
             'keys' => [
